@@ -3,7 +3,6 @@ import apiList from './apiList'
 export default {
   //请求接口
   requireApi: ({ commit, state }, { url, name, method, data, key, success, error }) => {
-      console.log(state.apiPath+apiList[name])
       // 自动处理url
       let path = ''
       if(!!url){

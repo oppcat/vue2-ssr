@@ -22,6 +22,7 @@
                         <li class="tab">
                             <a href="/">
                                 <span class="menu-text">
+                                    
                                 </span>
                             </a>
                         </li>
@@ -42,6 +43,30 @@
         },
         methods: {
 
+        },
+        computed: {
+            renderingData () {
+                return this.$store.state.api.aList
+            }
+        },
+        //预请求
+        asyncData ({ store, route: { params: { id }}}) {
+            return store.dispatch('requireApi', {
+                // url:store.state.apiPath+'api/demo/index123',
+                name:'kyle',
+                data:{
+                    a:1,
+                    id:2
+                },
+                method:'post',
+                key:'aList',
+                success (info) {
+                    return info.data
+                },
+                error (err) {
+                    console.log(err)
+                }
+            })
         },
         mounted () {
 

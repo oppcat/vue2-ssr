@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <navBar></navBar>
+    <!--<navBar></navBar>-->
     <transition name="fade" mode="out-in">
       <router-view class="view"></router-view>
     </transition>
   </div>
 </template>
 <script>
-    import navBar from './components/common/navBar.vue'
+//    import navBar from './components/common/navBar.vue'
     export default {
         name: 'app',
         data () {
@@ -16,7 +16,7 @@
             }
         },
         components: {
-            navBar,
+//            navBar,
         }
     }
 </script>
@@ -27,7 +27,8 @@
     height: 100%
   }
   a{
-    text-decoration none
+    text-decoration none;
+    color: #333;
   }
   *, :after, :before {
     box-sizing: border-box;
@@ -40,10 +41,10 @@
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
   }
-.view
-  max-width 800px
-  margin 0 auto
-  position relative
+/*.view*/
+  /*max-width 800px*/
+  /*margin 0 auto*/
+  /*position relative*/
 
 .fade-enter-active, .fade-leave-active
   transition all .2s ease
