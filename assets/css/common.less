@@ -1,0 +1,403 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr,
+th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+template{
+  display: none;
+}
+
+html {
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+  /*-webkit-font-smoothing: antialiased;*/
+  /*-moz-osx-font-smoothing: grayscale;*/
+}
+a[href]{
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.67rem 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*盒子模型*/
+.ub
+{
+  display: -webkit-box !important;
+  display: box !important;
+  position:relative;
+}
+
+.ub-rev
+{
+  -webkit-box-direction:reverse;
+  box-direction:reverse;
+}
+
+.ub-fh
+{
+  width:100%;
+}
+
+.ub-fv
+{
+  height:100%;
+}
+
+.ub-con
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+.ub-ac
+{
+  -webkit-box-align:center;
+  box-align:center;
+}
+.ub-ae
+{
+  -webkit-box-align:end;
+  box-align:end;
+}
+
+.ub-pc
+{
+  -webkit-box-pack:center;
+  box-pack:center;
+}
+.ub-pe
+{
+  -webkit-box-pack:end;
+  box-pack:end;
+}
+.ub-pj
+{
+  -webkit-box-pack:justify;
+  box-pack:justify;
+}
+
+.ub-ver
+{
+  -webkit-box-orient:vertical;
+  box-orient:vertical;
+}
+
+.ub-f1
+{
+  position:relative;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+
+.ub-f2
+{
+  position:relative;
+  -webkit-box-flex: 2;
+  box-flex: 2;
+}
+
+.ub-f3
+{
+  position:relative;
+  -webkit-box-flex: 3;
+  box-flex: 3;
+}
+
+.ub-f4
+{
+  position:relative;
+  -webkit-box-flex: 4;
+  box-flex: 4;
+}
+
+.ub-img
+{
+  -webkit-background-size:contain;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.ub-img1
+{
+  -webkit-background-size:cover;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.ub-img2
+{
+  background-repeat:repeat-x;
+  background-size:auto 100%
+}
+.ub-img3
+{
+  background-repeat:repeat-y;
+  background-size:100% auto
+}
+
+.ub-img4
+{
+  -webkit-background-size:100% auto;
+  background-size:100% auto;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.ub-img5
+{
+  -webkit-background-size:auto 100%;
+  background-size:auto 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.ub-img6
+{
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.ub-img7
+{
+  -webkit-background-size:100% 100%;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+/*字体渐变*/
+.jb-col{
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+/*背景渐变*/
+.jb-bg{
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+.jb-all{
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.green:hover{
+  color: #6bc30d !important;
+}
+.blue:hover{
+  color: #3498db !important;
+}
+.bg-block:hover{
+  background: #333 !important;;
+}
+.white:hover{
+  color: #ffffff;
+}
+
+/*处理记住密码后的背景颜色*/
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
+  -webkit-text-fill-color: #ededed !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;
+  background-color:transparent;
+  background-image: none;
+  /*背景色透明  生效时长  过渡效果  启用时延迟的时间*/
+  transition: background-color 50000s ease-in-out 0s;
+}
+input {
+  background-color:transparent;
+}
+
+/*自定义通用样式*/
+.cur{
+  cursor: pointer !important;
+}
+.tof{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}
