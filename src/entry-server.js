@@ -33,10 +33,37 @@ export default context => {
       // A preFetch hook dispatches a store action and returns a Promise,
       // which is resolved when the action is complete and store state has been
       // updated.
-      Promise.all(matchedComponents.map(({ asyncData }) => asyncData && asyncData({
-        store,
-        route: router.currentRoute
-      }))).then(() => {
+
+      //递归取子组件的asyncData
+      function childPromise(componentsArr) {
+        return Promise.all(componentsArr.map(({asyncData, components}) => {
+          if(components && Object.keys(components).length > 0){
+            let componentsList = [];
+            for(let chi in components){
+              componentsList.push(components[chi])
+            }
+            childPromise(componentsList)
+          }
+          return asyncData && asyncData({
+            store,
+            route: router.currentRoute
+          })
+        }))
+      }
+      //matchedComponents改造
+      Promise.all(matchedComponents.map(({ asyncData, components }) => {
+        if(components && Object.keys(components).length > 0){
+          let componentsList = [];
+          for(let chi in components){
+            componentsList.push(components[chi])
+          }
+          childPromise(componentsList)
+        }
+        return asyncData && asyncData({
+          store,
+          route: router.currentRoute
+        })
+      })).then(() => {
         isDev && console.log(`data pre-fetch: ${Date.now() - s}ms`)
         // After all preFetch hooks are resolved, our store is now
         // filled with the state needed to render the app.
@@ -47,6 +74,24 @@ export default context => {
         context.state = store.state
         resolve(app)
       }).catch(reject)
+
+
+      // Promise.all(matchedComponents.map(({ asyncData }) => asyncData && asyncData({
+      //   store,
+      //   route: router.currentRoute
+      // }))).then(() => {
+      //   isDev && console.log(`data pre-fetch: ${Date.now() - s}ms`)
+      //   // After all preFetch hooks are resolved, our store is now
+      //   // filled with the state needed to render the app.
+      //   // Expose the state on the render context, and let the request handler
+      //   // inline the state in the HTML response. This allows the client-side
+      //   // store to pick-up the server-side state without having to duplicate
+      //   // the initial data fetching on the client.
+      //   context.state = store.state
+      //   resolve(app)
+      // }).catch(reject)
+
+
     }, reject)
   })
 }

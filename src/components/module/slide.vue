@@ -58,6 +58,6 @@
         background-color: red;
         width: 840px;
         height: 300px;
-        float: left;
+        /*float: left;*/
     }
 </style>

@@ -29,22 +29,22 @@
         },
         //预请求
         asyncData ({ store, route: { params: { id }}}) {
-          return store.dispatch('requireApi', {
-//            url:store.state.apiPath+'api/demo/index123',
-            name:'kyle',
-            data:{
-              a:1,
-              id:2
-            },
-            method:'post',
-            key:'aList',
-            success (info) {
-              return info.data
-            },
-            error (err) {
-              console.log(err)
-            }
-          })
+//          return store.dispatch('requireApi', {
+////            url:store.state.apiPath+'api/demo/index123',
+//            name:'kyle',
+//            data:{
+//              a:1,
+//              id:2
+//            },
+//            method:'post',
+//            key:'aList',
+//            success (info) {
+//              return info.data
+//            },
+//            error (err) {
+//              console.log(err)
+//            }
+//          })
         },
         //title () {
         //  return 'title'

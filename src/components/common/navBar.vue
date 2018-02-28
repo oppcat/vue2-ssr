@@ -22,8 +22,9 @@
                         <li class="tab">
                             <a href="/">
                                 <span class="menu-text">
-                                    
+                                    {{aList222}}
                                 </span>
+                                <demoA></demoA>
                             </a>
                         </li>
                     </ul>
@@ -34,48 +35,48 @@
 </template>
 
 <script>
-    export default {
-        name: 'navBar',
-        data () {
-            return {
-
-            }
+    import demoA from './demo.vue'
+  export default {
+    name: 'navBar',
+    data() {
+      return {}
+    },
+    components: {
+      demoA
+    },
+    methods: {},
+    computed: {
+      aList222() {
+        return this.$store.state.api.aList222
+      }
+    },
+    //预请求
+    asyncData({store, route: {params: {id}}}) {
+      return store.dispatch('requireApi', {
+        // url:store.state.apiPath+'api/demo/index123',
+        name: 'kyle',
+        data: {
+          a: 1,
+          id: 2
         },
-        methods: {
-
+        method: 'post',
+        key: 'aList222',
+        success(info) {
+          return info.data
         },
-        computed: {
-            renderingData () {
-                return this.$store.state.api.aList
-            }
-        },
-        //预请求
-        asyncData ({ store, route: { params: { id }}}) {
-            return store.dispatch('requireApi', {
-                // url:store.state.apiPath+'api/demo/index123',
-                name:'kyle',
-                data:{
-                    a:1,
-                    id:2
-                },
-                method:'post',
-                key:'aList',
-                success (info) {
-                    return info.data
-                },
-                error (err) {
-                    console.log(err)
-                }
-            })
-        },
-        mounted () {
-
+        error(err) {
+          console.log(err)
         }
+      })
+    },
+    mounted() {
+
     }
+  }
 </script>
 
 <style scoped lang="less">
-    .navbar{
+    .navbar {
         border: 1px solid transparent;
         background-color: #fff;
         border-color: #f0f0f0;
@@ -88,7 +89,7 @@
         min-height: 50px;
         margin-bottom: 20px;
         height: 56px;
-        .width-limit{
+        .width-limit {
             min-width: 768px;
             max-width: 1440px;
             margin: 0 auto;
@@ -96,7 +97,7 @@
                 float: left;
                 height: 56px;
                 padding: 0;
-                img{
+                img {
                     height: 100%;
                     vertical-align: middle;
                     border: 0;
@@ -124,17 +125,17 @@
                 white-space: nowrap;
                 padding: 6px 12px;
                 user-select: none;
-                i{
+                i {
                     font-size: 15px;
                 }
             }
-            .container{
+            .container {
                 width: 960px;
                 margin-right: auto;
                 margin-left: auto;
                 padding-left: 15px;
                 padding-right: 15px;
-                .collapse{
+                .collapse {
                     border-color: #e7e7e7;
                     margin-right: 0;
                     display: block;
@@ -145,18 +146,18 @@
                     width: auto;
                     border-top: 0;
                     box-shadow: none;
-                    .nav{
+                    .nav {
                         float: left;
                         margin: 0;
                         padding-left: 0;
                         list-style: none;
-                        li{
+                        li {
                             margin-right: 10px;
                             float: left;
                             position: relative;
                             display: block;
                             line-height: 20px;
-                            > a{
+                            > a {
                                 background: none;
                                 height: 56px;
                                 line-height: 26px;
@@ -166,11 +167,11 @@
                                 text-decoration: none;
                                 color: #333;
                             }
-                            > a:hover{
-                                background-color: hsla(0,0%,71%,.1)!important
+                            > a:hover {
+                                background-color: hsla(0, 0%, 71%, .1) !important
                             }
                         }
-                        li.active a{
+                        li.active a {
                             color: #ea6f5a;
                         }
                     }
