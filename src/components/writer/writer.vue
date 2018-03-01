@@ -1,19 +1,32 @@
 <template>
     <div class="">
-
+        <mavon-editor style="height: 100%"></mavon-editor>
     </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  var mavonEditor = require('mavon-editor')
+  import 'mavon-editor/dist/css/index.css'
+
+
+//  Vue.use(mavonEditor)
+//  setTimeout(() =>{
+    require('./js')
+//  },2000)
     export default {
         name: 'writer',
         data () {
             return {
-
+              value: 'zzzzzzzzzz'
             }
         },
         components: {
-
+//          'mavon-editor' (resolve) {
+//            //异步组件写法
+////            require('mavon-editor', resolve)
+////            require(['./service-search.vue'], resolve)
+//          }
         },
         computed: {
             demoData () {
@@ -28,7 +41,7 @@
             // })
         },
         //预请求
-        asyncData ({ store, route: { params: { id }}}) {
+//        asyncData ({ store, route: { params: { id }}}) {
 //          return store.dispatch('requireApi', {
 ////            url:store.state.apiPath+'api/demo/index123',
 //            name:'kyle',
@@ -45,7 +58,6 @@
 //              console.log(err)
 //            }
 //          })
-        },
         //title () {
         //  return 'title'
         //}

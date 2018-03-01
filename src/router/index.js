@@ -5,6 +5,7 @@ Vue.use(Router)
 
 const index = () => import('../components/index.vue');
 const writer = () => import('../components/writer/writer.vue');
+// import  writer from '../components/writer/writer.vue';
 const article = () => import('../components/article/article.vue');
 // const recommendContent = () => import('../components/module/recommend-content.vue');
 export function createRouter () {

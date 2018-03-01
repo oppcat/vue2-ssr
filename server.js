@@ -99,6 +99,8 @@ function render (req, res) {
 
   const context = {
     title: 'webascii', // default title
+    meta: '', // 默认不添加meta
+    script: '', // 默认不添加script
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {

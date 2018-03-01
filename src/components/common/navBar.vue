@@ -22,9 +22,8 @@
                         <li class="tab">
                             <a href="/">
                                 <span class="menu-text">
-                                    {{aList222}}
+
                                 </span>
-                                <demoA></demoA>
                             </a>
                         </li>
                     </ul>
@@ -41,34 +40,34 @@
     data() {
       return {}
     },
-    components: {
-      demoA
-    },
+//    components: {
+//      demoA
+//    },
     methods: {},
-    computed: {
-      aList222() {
-        return this.$store.state.api.aList222
-      }
-    },
+//    computed: {
+//      aList222() {
+//        return this.$store.state.api.aList222
+//      }
+//    },
     //预请求
-    asyncData({store, route: {params: {id}}}) {
-      return store.dispatch('requireApi', {
-        // url:store.state.apiPath+'api/demo/index123',
-        name: 'kyle',
-        data: {
-          a: 1,
-          id: 2
-        },
-        method: 'post',
-        key: 'aList222',
-        success(info) {
-          return info.data
-        },
-        error(err) {
-          console.log(err)
-        }
-      })
-    },
+//    asyncData({store, route: {params: {id}}}) {
+//      return store.dispatch('requireApi', {
+//        // url:store.state.apiPath+'api/demo/index123',
+//        name: 'kyle',
+//        data: {
+//          a: 1,
+//          id: 2
+//        },
+//        method: 'post',
+//        key: 'aList222',
+//        success(info) {
+//          return info.data
+//        },
+//        error(err) {
+//          console.log(err)
+//        }
+//      })
+//    },
     mounted() {
 
     }

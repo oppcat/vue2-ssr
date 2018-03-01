@@ -22,6 +22,24 @@
                         </div>
                     </div>
                     <div class="show-content">
+                        <!--<div id="editor">-->
+                            <!--<textarea :value="input" @input="update"></textarea>-->
+                            <!--<div v-html="compiledMarkdown"></div>-->
+                        <!--</div>-->
+                        <!--<mavon-editor v-model="value" data-server-rendered="false"/>-->
+                        <!-- Code Block -->
+                        <highlight-code lang="javascript">
+                            let str = 'Hello, World!';
+                            console.log(str);
+                        </highlight-code>
+
+                        <highlight-code lang="javascript">
+                            let str = 'Hello, World!';
+                            console.log(str);
+                        </highlight-code>
+
+                        <!-- Inline Code Block -->
+                        <highlight-code lang="javascript" inline>alert('Hello, World!');</highlight-code>
                         <div class="describe" v-if="content.describe != ''">
                             {{content.describe}}
                         </div>
@@ -36,27 +54,28 @@
 
 <script>
   import navBar from '../../components/common/navBar.vue'
-//  var demo = require('../../../assets/SyntaxHighlighter/shCore');
-//  console.log(demo.SyntaxHighlighter)
-//  require('../../../assets/SyntaxHighlighter/shBrushAll');
+  import Vue from 'vue';
+  //代码高亮插件
+  import VueHighlightJS from 'vue-highlight.js';
+  Vue.use(VueHighlightJS);
+//富文本编辑器 markdown 编辑器
+//import mavonEditor from 'mavon-editor'
+//Vue.use(mavonEditor);
+
+
   export default {
-    head () {
+    name: 'article',
+    meta: `
+            <meta charset="utf-1238">
+          `,
+//    script:'<script src="/dist/0.js"><\/script>',
+    data() {
       return {
-        title: 'sssssssssssss',
-        meta: [
-          { hid: 'description', name: 'description', content: 'My custom description' }
-        ]
+        value: ''
       }
     },
-//    zhuangkai () {
-//      return 'aaaaaa'
-//    },
-    name: 'article',
-    data() {
-      return {}
-    },
     components: {
-      navBar
+      navBar,
     },
     computed: {
       //文章内容
@@ -73,7 +92,9 @@
       }
     },
     mounted() {
+      this.$nextTick(() => {
 
+      })
     },
 //    //预请求
     asyncData({store, route: { params: { id }}}) {
@@ -97,7 +118,9 @@
 </script>
 
 <style scoped lang="less">
-    @import "../../../assets/SyntaxHighlighter/shCoreDefault.css";
+    @import '~highlight.js/styles/default.css';
+    /*@import "../../../assets/SyntaxHighlighter/shCoreDefault.css";*/
+    /*@import '~mavon-editor/dist/css/index.css';*/
     .note{
         position: relative;
         /*padding-top: 10px;*/

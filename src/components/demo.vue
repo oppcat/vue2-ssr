@@ -10,6 +10,12 @@
     data() {
       return {}
     },
+    // 添加meta
+    meta: `
+            <meta charset="utf-1238">
+          `,
+    // 添加script
+    script:`<script src="" defer>`,
     components: {},
     computed: {
 //            demoData () {
