@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const index = () => import('../components/index.vue');
-const writer = () => import('../components/writer/writer.vue');
+// const writer = () => import('../components/writer/writer.vue');
 // import  writer from '../components/writer/writer.vue';
 const article = () => import('../components/article/article.vue');
 // const recommendContent = () => import('../components/module/recommend-content.vue');
@@ -15,7 +15,7 @@ export function createRouter () {
     scrollBehavior: () => ({ y: 0 }),
     routes: [
       { path: '/', component: index },
-      { path: '/writer', component: writer },
+      // { path: '/writer', component: writer },
       { path: '/article/:id', component: article },
       // { path: '/recommend-content', component: recommendContent }
     ]

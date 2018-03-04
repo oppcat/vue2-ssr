@@ -4,7 +4,8 @@
   "author": "Evan You <yyx990803@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node server",
+    "dev": "supervisor server.js",
+    "dev2": "node server",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",
@@ -17,6 +18,7 @@
   "dependencies": {
     "compression": "^1.7.1",
     "cross-env": "^5.1.1",
+    "element-ui": "^2.2.1",
     "es6-promise": "^4.1.1",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
