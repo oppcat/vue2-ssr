@@ -28,7 +28,16 @@
       if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
   };
-//    import navBar from './components/common/navBar.vue'
+  import Vue from 'vue';
+  import ElementUI from 'element-ui';
+  import 'element-ui/lib/theme-chalk/index.css';
+  Vue.use(ElementUI)
+
+  import VueLazyLoad from 'vue-lazyload'
+  Vue.use(VueLazyLoad,{
+//    error:'./static/error.png',
+//    loading:'./static/loading.png'
+  })
     export default {
         name: 'app',
         data () {
